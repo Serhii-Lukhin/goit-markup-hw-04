@@ -1,0 +1,338 @@
+/***Загальні стилі всіх сторінок*/
+:root {
+  --primary-brand: #4d5ae5; /*iris*/
+  --pressed-state: #404bbf; /*ocean*/
+  --dark: #2e2f42; /*navy-blue*/
+  --success: #31d0aa; /*green*/
+  --text: #434455; /*slate*/
+  --subtle-text: #8e8f99; /*light-slate*/
+  --accent: #e7e9fc; /*cornflower*/
+  --light: #f4f4fd; /*cloud*/
+  --modal-overlay: #2e2f4266; /*navy-blue-modal*/
+  --hero-background: #2e2f42b3; /*grey*/
+  --extra-light: #ffffff; /*white*/
+}
+body {
+  font-family: "Roboto", sans-serif;
+  color: var(--text);
+  letter-spacing: 0.02em;
+}
+.container {
+  width: 1158px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+/*ментору: видалив .flex і пододавав його до відповдних класів, дійсно перемудрив із ним*/
+.full-width {
+  min-width: 1158px;
+}
+.visually-hidden {
+  /*візуальне приховування елементів*/
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+/*сітки*/
+.my-advantages-list, /*ментору: подумав, що логічно всі ці блоки зробити сітками. Бо може потім додасться член команди, або вид діяльності тощо*/
+.my-products-list,
+.my-team-list,
+.my-portfolio-list {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 48px;
+  column-gap: 24px;
+}
+/*fonts*/
+.logo {
+  font-family: "Raleway";
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 1.33;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-right: 76px;
+}
+.header-1 {
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 1.07;
+}
+.header-2 {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
+}
+.header-3 {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+}
+.body-text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.small-text {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+}
+.body-medium-text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.button-text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+}
+.link-text {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+  color: var(--primary-brand);
+  text-decoration: underline;
+}
+/*font colors*/
+.primary-brand {
+  color: var(--primary-brand); /*iris*/
+}
+.pressed-state {
+  color: var(--pressed-state); /*ocean*/
+}
+.dark {
+  color: var(--dark); /*navy-blue*/
+}
+.text {
+  color: var(--text); /*slate*/
+}
+.subtle-text {
+  color: var(--subtle-text); /*light-slate*/
+}
+.accent {
+  color: var(--accent); /*cornflower*/
+}
+.light {
+  color: var(--light); /*cloud*/
+}
+.extra-light {
+  color: var(--extra-light); /*white*/
+}
+/*buttons*/
+.main-button {
+  padding: 16px 32px;
+  background: var(--primary-brand);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: 0;
+  color: var(--extra-light);
+  cursor: pointer;
+}
+.main-button:focus,
+.main-button:hover,
+.main-button:active {
+  background: var(--pressed-state);
+}
+.filter-button {
+  padding: 16px 32px;
+  background-color: var(--light);
+  border-radius: 4px;
+  border: 1px solid var(--accent);
+  color: var(--primary-brand);
+  cursor: pointer;
+}
+.filter-butt:focus,
+.filter-button:hover,
+.filter-button:active {
+  background: Var(--pressed-state);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  border: 1px solid var(--pressed-state); /*ментору: проблема була в нульовому бордері отут, тому залишив бордер, але перефарбував його в основнй колір кнопки*/
+  color: var(--extra-light);
+}
+/*background colors*/
+.bg-primary-brand {
+  background-color: var(--primary-brand); /*iris*/
+}
+.bg-ocean {
+  background-color: var(--pressed-state); /*ocean*/
+}
+.bg-dark {
+  background-color: var(--dark); /*navy-blue*/
+}
+.bg-success {
+  background-color: var(--success); /*green*/
+}
+.bg-text {
+  background-color: var(--text); /*slate*/
+}
+.bg-subtle-text {
+  background-color: var(--subtle-text); /*light-slate*/
+}
+.bg-accent {
+  background-color: var(--accent); /*cornflower*/
+}
+.bg-light {
+  background-color: var(--light); /*cloud*/
+}
+.bg-modal-overlay {
+  background-color: var(--modal-overlay); /*navy-blue-modal*/
+}
+.bg-hero-background {
+  background-color: var(--hero-background); /*grey*/
+}
+.bg-extra-light {
+  background-color: var(--extra-light); /*white*/
+}
+/*header*/
+header {
+  border-bottom: 1px solid var(--accent);
+}
+.my-header {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.my-nav {
+  display: flex;
+  align-items: center;
+}
+.my-link-list {
+  display: flex;
+}
+.my-link-item:not(:last-child) {
+  margin-right: 40px;
+}
+.my-link {
+  padding: 24px 0;
+  color: var(--dark);
+  text-decoration: none;
+}
+.my-link:focus,
+.my-link:hover,
+.my-link:active {
+  color: var(--pressed-state);
+  border-bottom: 4px solid var(--pressed-state);
+}
+.my-address-list {
+  display: flex;
+}
+.my-address-item:not(:first-child) {
+  margin-left: 40px;
+}
+.my-address-link {
+  text-decoration: none;
+  font-style: normal;
+}
+.my-address-link:focus,
+.my-address-link:hover,
+.my-address-link:active {
+  color: var(--pressed-state);
+}
+/*footer*/
+.my-footer {
+  padding: 100px 0;
+  flex-direction: column;
+  justify-content: center;
+}
+.my-footer-text {
+  width: 264px;
+  margin-top: 16px;
+}
+/***Індивідульні стілі на окремих сторінках***/
+/**index.html**/
+/*hero*/
+.my-hero {
+  height: 600px; /*ментору: а отут, логічно додати фіксовану висоту чи все ж теж паддінгами зробити?*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.my-hero-text {
+  width: 494px;
+  margin-bottom: 48px;
+  text-align: center;
+}
+/*advantages*/
+.my-advantages {
+  padding: 120px 0;
+}
+.my-advantages h3 {
+  margin-bottom: 8px;
+}
+.my-advantages-item {
+  flex-basis: calc((100% - 72px) / 4);
+}
+/*products*/
+.my-products {
+  text-align: center;
+  padding-bottom: 120px;
+}
+.my-products-title {
+  margin-bottom: 72px;
+}
+.my-products-item {
+  flex-basis: calc((100% - 48px) / 3);
+}
+/*team*/
+.my-team {
+  text-align: center;
+  padding: 120px 0;
+}
+.my-team-title {
+  margin-bottom: 72px;
+}
+.my-team-card {
+  flex-basis: calc((100% - 72px) / 4);
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+  border-radius: 0px 0px 4px 4px;
+}
+.my-team-card-caption {
+  padding: 32px 16px;
+}
+.my-team-card-caption > h3 {
+  margin-bottom: 8px;
+}
+/**Portfolio.html*/
+/*filtres*/
+.my-filtres-list {
+  margin-bottom: 72px !important;
+  display: flex;
+  justify-content: center;
+}
+.my-filtres-item:not(:last-child) {
+  margin-right: 24px;
+}
+/*portfolio*/
+.my-portfolio {
+  padding: 96px 0 120px;
+}
+.my-portfolio-item {
+  flex-basis: calc((100% - 48px) / 3);
+}
+.my-portfolio-caption {
+  padding: 32px 16px;
+  border: 1px solid var(--accent);
+  border-top: 0;
+}
+.my-portfolio-caption h2 {
+  margin-bottom: 8px;
+}
