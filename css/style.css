@@ -22,7 +22,6 @@ body {
   padding: 0 15px;
   margin: 0 auto;
 }
-/*ментору: видалив .flex і пододавав його до відповдних класів, дійсно перемудрив із ним*/
 .full-width {
   min-width: 1158px;
 }
@@ -41,9 +40,10 @@ body {
   overflow: hidden;
 }
 /*сітки*/
-.my-advantages-list, /*ментору: подумав, що логічно всі ці блоки зробити сітками. Бо може потім додасться член команди, або вид діяльності тощо*/
+.my-advantages-list,
 .my-products-list,
 .my-team-list,
+.customers-list,
 .my-portfolio-list {
   display: flex;
   flex-wrap: wrap;
@@ -161,7 +161,7 @@ body {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
-  border: 1px solid var(--pressed-state); /*ментору: проблема була в нульовому бордері отут, тому залишив бордер, але перефарбував його в основнй колір кнопки*/
+  border: 1px solid var(--pressed-state);
   color: var(--extra-light);
 }
 /*background colors*/
@@ -258,8 +258,13 @@ header {
 /***Індивідульні стілі на окремих сторінках***/
 /**index.html**/
 /*hero*/
+.bg-hero {
+  background: linear-gradient(var(--hero-background), var(--hero-background)),
+    var(--dark) url(../images/bg-hero.jpg) no-repeat center;
+  background-size: contain;
+}
 .my-hero {
-  height: 600px; /*ментору: а отут, логічно додати фіксовану висоту чи все ж теж паддінгами зробити?*/
+  height: 600px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -279,6 +284,26 @@ header {
 }
 .my-advantages-item {
   flex-basis: calc((100% - 72px) / 4);
+}
+.my-advantages-item::before {
+  content: "";
+  display: block;
+  height: 112px;
+  background: var(--light);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.my-advantages-item:nth-child(1)::before {
+  background-image: url(../images/advantages/strategy-icon.svg);
+}
+.my-advantages-item:nth-child(2)::before {
+  background-image: url(../images/advantages/punctuality-icon.svg);
+}
+.my-advantages-item:nth-child(3)::before {
+  background-image: url(../images/advantages/diligence-icon.svg);
+}
+.my-advantages-item:nth-child(4)::before {
+  background-image: url(../images/advantages/technologies-icon.svg);
 }
 /*products*/
 .my-products {
@@ -311,6 +336,59 @@ header {
 .my-team-card-caption > h3 {
   margin-bottom: 8px;
 }
+.my-team-card-caption > p {
+  margin-bottom: 8px;
+}
+.my-team-social {
+  display: flex;
+  justify-content: space-between;
+}
+.my-team-social-link {
+  display: block;
+  background: var(--primary-brand);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  padding: 12px;
+}
+.my-team-social-link:hover,
+.my-team-social-link:focus {
+  background: var(--pressed-state);
+}
+.icon-team {
+  display: block;
+  fill: var(--light);
+  width: 16px;
+  height: 16px;
+}
+/*customers*/
+.my-customers {
+  text-align: center;
+  padding-top: 130px;
+  padding-bottom: 120px;
+}
+.customers-title {
+  margin-bottom: 72px;
+}
+.customers-item {
+  flex-basis: calc((100% - 120px) / 6);
+}
+.customers-link {
+  display: block;
+  border: 1px solid #8e8f99;
+  border-radius: 4px;
+  width: 168px;
+  height: 88px;
+  padding: 16px 32px;
+}
+.customers-link:hover {
+  border-color: var(--pressed-state);
+}
+.customers-icon {
+  width: 104px;
+  height: 56px;
+}
+
 /**Portfolio.html*/
 /*filtres*/
 .my-filtres-list {
@@ -327,6 +405,11 @@ header {
 }
 .my-portfolio-item {
   flex-basis: calc((100% - 48px) / 3);
+}
+.my-portfolio-item:hover,
+.my-portfolio-item:focus {
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 .my-portfolio-caption {
   padding: 32px 16px;
