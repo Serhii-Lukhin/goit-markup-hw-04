@@ -1,4 +1,4 @@
-# goit-markup-hw-03
+# goit-markup-hw-04
 
-Hometask 3
-https://serhii-lukhin.github.io/goit-markup-hw-03/
+Hometask 4
+https://serhii-lukhin.github.io/goit-markup-hw-04/
