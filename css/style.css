@@ -246,14 +246,48 @@ header {
   color: var(--pressed-state);
 }
 /*footer*/
+.my-footer-box {
+  display: flex;
+  align-items: flex-start;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
 .my-footer {
-  padding: 100px 0;
   flex-direction: column;
   justify-content: center;
+  margin-right: 120px;
 }
 .my-footer-text {
   width: 264px;
   margin-top: 16px;
+}
+.my-footer-social > h2 {
+  margin-bottom: 16px;
+}
+.my-footer-social-list {
+  display: flex;
+}
+.my-footer-social-list > li:not(:last-child) {
+  margin-right: 16px;
+}
+
+.my-footer-social-link {
+  display: block;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+}
+.my-footer-social-link:hover,
+.my-footer-social-link:focus {
+  background: var(--success);
+}
+.icon-footer {
+  display: block;
+  fill: var(--light);
+  width: 24px;
+  height: 24px;
 }
 /***Індивідульні стілі на окремих сторінках***/
 /**index.html**/
@@ -292,6 +326,7 @@ header {
   background: var(--light);
   background-repeat: no-repeat;
   background-position: center;
+  margin-bottom: 8px;
 }
 .my-advantages-item:nth-child(1)::before {
   background-image: url(../images/advantages/strategy-icon.svg);
@@ -375,20 +410,24 @@ header {
 }
 .customers-link {
   display: block;
-  border: 1px solid #8e8f99;
-  border-radius: 4px;
   width: 168px;
   height: 88px;
-  padding: 16px 32px;
 }
 .customers-link:hover {
   border-color: var(--pressed-state);
 }
 .customers-icon {
-  width: 104px;
-  height: 56px;
+  width: 100%;
+  height: 100%;
+  fill: var(--subtle-text);
+  border: 1px solid var(--subtle-text);
+  border-radius: 4px;
+  padding: 16px 32px;
 }
-
+.customers-icon:hover {
+  border: 1px solid var(--pressed-state);
+  fill: var(--pressed-state);
+}
 /**Portfolio.html*/
 /*filtres*/
 .my-filtres-list {
