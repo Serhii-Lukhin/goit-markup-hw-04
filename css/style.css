@@ -296,6 +296,8 @@ header {
   background: linear-gradient(var(--hero-background), var(--hero-background)),
     var(--dark) url(../images/bg-hero.jpg) no-repeat center;
   background-size: contain;
+  width: 1440px;
+  margin: 0 auto;
 }
 .my-hero {
   height: 600px;
